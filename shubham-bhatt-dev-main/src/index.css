@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2.7%;
+    --background-secondary: 0 0% 5.1%;
+    --surface: 0 0% 7.8%;
+    --card: 0 0% 10.2%;
+    --foreground: 0 0% 96.1%;
+    --card-foreground: 0 0% 96.1%;
+    --popover: 0 0% 10.2%;
+    --popover-foreground: 0 0% 96.1%;
+    --primary: 22 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 22 100% 63%;
+    --secondary-foreground: 0 0% 100%;
+    --highlight: 28 100% 65%;
+    --muted: 0 0% 10.2%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 22 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 22 100% 55%;
+    --radius: 0.875rem;
+    --text-secondary: 0 0% 64%;
+    --text-muted: 220 9% 46%;
+
+    --sidebar-background: 0 0% 5.1%;
+    --sidebar-foreground: 0 0% 96.1%;
+    --sidebar-primary: 22 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 7.8%;
+    --sidebar-accent-foreground: 0 0% 96.1%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 22 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-[var(--radius)];
+  }
+  .glow-orange {
+    box-shadow: 0 0 20px hsl(22 100% 55% / 0.15), 0 0 60px hsl(22 100% 55% / 0.05);
+  }
+  .glow-orange-hover {
+    @apply transition-shadow duration-500;
+  }
+  .glow-orange-hover:hover {
+    box-shadow: 0 0 30px hsl(22 100% 55% / 0.25), 0 0 80px hsl(22 100% 55% / 0.1);
+  }
+  .text-gradient-orange {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+  .grid-pattern {
+    background-image: radial-gradient(circle, hsl(0 0% 20%) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 5.1%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(0 0% 20%);
+  border-radius: 3px;
+}
