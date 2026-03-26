@@ -11,6 +11,20 @@ const HeroSection = () => {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/8 blur-[120px] animate-pulse-glow" />
 
       <div className="relative z-10 container mx-auto px-4 text-center">
+        {/* Portfolio Picture */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="flex justify-center mb-6"
+        >
+          <img
+            src="/PortfolioPic.png"
+            alt="Portfolio"
+            className="w-80 h-80 rounded-full object-cover border-4 border-primary shadow-lg"
+            style={{ margin: '0 auto' }}
+          />
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
